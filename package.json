@@ -1,0 +1,23 @@
+{
+  "name": "balckMusic",
+  "version": "1.0.0",
+  "description": "黑云音乐--你值得拥有的好音乐\r 采用Vue框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjy5203/balckMusic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjy5203/balckMusic/issues"
+  },
+  "homepage": "https://github.com/jjy5203/balckMusic#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
