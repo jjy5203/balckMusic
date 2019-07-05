@@ -1,0 +1,18 @@
+#app {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#app h1 {
+    text-align: center
+}
+
+.fl {
+float: left;
+}
+.fr {
+    float: right;
+}
+
+
