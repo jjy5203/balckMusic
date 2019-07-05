@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/02.player.css" />
+    <link rel="stylesheet" href="./css/iconfont.css" />
+  </head>
+  <body>
+    <div id="player">
+      <h2 class="title">黑云音乐</h2>
+      <div class="search">
+        <input type="text" />
+        <button>
+          <span class="iconfont icon-search"></span>
+        </button>
+      </div>
+      <p class="result">
+        搜索"学猫叫",找到<span>100</span>首单曲
+      </p>
+      <ul class="tab-wrapper">
+        <!-- tab栏 -->
+        <ul class="tab-bar">
+          <li class="bar-item active">
+            单曲
+          </li>
+          <li class="bar-item">
+            专辑
+          </li>
+          <li class="bar-item">
+            歌手
+          </li>
+          <li class="bar-item">
+            歌单
+          </li>
+          <li class="bar-item">
+            用户
+          </li>
+          <li class="bar-item">
+            MV
+          </li>
+          <li class="bar-item">
+            歌词
+          </li>
+          <li class="bar-item">
+            电台
+          </li>
+          <li class="bar-item">
+            视频
+          </li>
+        </ul>
+        <!-- 对应的内容区域 -->
+        <div class="tab-content">
+          <div class="content-item">
+            1
+          </div>
+          <div class="content-item">
+            2
+          </div>
+          <div class="content-item">3</div>
+          <div class="content-item">4</div>
+          <div class="content-item">5</div>
+          <div class="content-item">6</div>
+          <div class="content-item">7</div>
+          <div class="content-item">8</div>
+          <div class="content-item">9</div>
+        </div>
+      </ul>
+      <div class="player">
+        <audio controls :src="musicUrl" autoplay class="audio"></audio>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./lib/vue.js"></script>
+<!-- axios 阿西奥斯 -->
+<!-- <script src="./lib/vue-resource.js"></script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
