@@ -11,36 +11,29 @@
     <link rel="stylesheet" href="./libs/fonts/">
 
 </head>
-
+<!-- 导航 -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="" src="./img/logo.png" height="40px">
+            </a>
+        </div>
+    </div>
+</nav>
 <div id="app">
 
-    <!-- 导航 -->
-    <!-- <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                  <img alt="" src="./img/logo.png" height="40px">
-                </a>
-              </div>
-            </div>
-          </nav> -->
 
     <!-- 搜索 -->
 
     <h1>黑马云音乐</h1>
 
     <div class="input-group">
-        <input 
-        type="text" 
-        v-focus 
-        v-model="search"
-         @keyup.enter="searchMusic" 
-         class="form-control"
-          placeholder="音乐,从此起步" 
-          aria-describedby="basic-addon2">
+        <input type="text" v-focus v-model="search" @keyup.enter="searchMusic" class="form-control"
+            placeholder="音乐,从此起步" aria-describedby="basic-addon2">
         <span class="input-group-addon " id="basic-addon2">&nbsp;&nbsp; &nbsp;&nbsp;搜&nbsp;&nbsp; 索 &nbsp;
             &nbsp;&nbsp;&nbsp; </span>
-            <!-- <button type="button" class="btn btn-default navbar-btn fl">Sign in</button>     -->
+        <!-- <button type="button" class="btn btn-default navbar-btn fl">Sign in</button>     -->
 
     </div>
 
@@ -48,7 +41,7 @@
     <hr>
 
     <!-- 导航 -->
-    <div class="navigation ">
+    <!-- <div class="navigation ">
         <ul class="nav nav-pills ">
             <li role="presentation" class="active"><a href="#">首页</a></li>
             <li role="presentation"><a href="#">单曲</a></li>
@@ -76,156 +69,253 @@
 
         </ul>
 
-    </div>
-    <hr>
-    <!-- 巨幕 -->
-    <!-- <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div> -->
 
-    <!-- 轮播图 -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-        </ol>
+    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="./img/01.jpg" alt="..." width="100%">
-                <div class="carousel-caption">
+              <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"  >首页</a></li>
 
-                </div>
+              <li role="presentation" class=""><a href="#profile01" role="tab" id="profile01-tab" data-toggle="tab" aria-controls="profile01" aria-expanded="false">单曲</a></li>
+
+              <li role="presentation" class=""><a href="#profile02" role="tab" id="profile02-tab" data-toggle="tab" aria-controls="profile02" aria-expanded="false">专辑</a></li>
+
+              <li role="presentation" class=""><a href="#profile03" role="tab" id="profile03-tab" data-toggle="tab" aria-controls="profile03" aria-expanded="false">歌单</a></li>
+
+              <li role="presentation" class=""><a href="#profile04" role="tab" id="profile04-tab" data-toggle="tab" aria-controls="profile04" aria-expanded="false">用户</a></li>
+
+
+              <li role="presentation" class=""><a href="#profile05" role="tab" id="profile05-tab" data-toggle="tab" aria-controls="profile05" aria-expanded="false">MV</a></li>
+
+              <li role="presentation" class=""><a href="#profile06" role="tab" id="profile06-tab" data-toggle="tab" aria-controls="profile06" aria-expanded="false">歌词</a></li>
+
+
+              <li role="presentation" class=""><a href="#profile07" role="tab" id="profile07-tab" data-toggle="tab" aria-controls="profile07" aria-expanded="false">电台</a></li>
+
+              <li role="presentation" class="dropdown">
+                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">更多 <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                  <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li>
+                  <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+              <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                  <zhuye></zhuye>
+              </div>
+
+              <!-- 单曲列表 -->
+              <div role="tabpanel" class="tab-pane fade" id="profile01" aria-labelledby="profile01-tab">
+                    <div class="bs-example" data-example-id="simple-table">
+                            <table class="table table-hover ">
+                              <caption>为你搜到以下歌曲</caption>
+                              <thead>
+                                <tr>
+                                  <th>序 号</th>
+                                  <th>歌曲名称</th>
+                                  <th>歌手名称</th>
+                                  <th>专辑名称</th>
+                                  <th>播发歌曲</th>
+                                  <th>播发MV</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr v-for="(item, index) in musicList" :key="index">
+                                  <th scope="row">{{index+1}}</th>
+                                  <td>{{item.name}}</td>
+                                  <td>{{item.artists[0].name}}</td>
+                                  <td>{{item.album.name}}</td>
+                                  <td>
+                                   <a href="#"> <span class="glyphicon glyphicon-play-circle" style="font-size: 30px"></span></a>
+                                  </td>
+                                  <td>
+
+                                    <a href="#">
+                                        <img :src="imgUrl?imgUrl:'./img/01.jpg' " alt="" height="30px">
+                                    </a>
+                                  </td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                          </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="profile02" aria-labelledby="profile02-tab">
+                  <p>02</p>
+              </div>
+
+
+
+              <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+                  <p>03</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+                  <p>04</p>
+              </div>
             </div>
-            <div class="item">
-                <img src="./img/02.jpg" alt="..." width="100%">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="./img/03.jpg" alt="..." width="100%">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="./img/04.jpg" alt="..." width="100%">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="./img/05.jpg" alt="..." width="100%">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+          </div>
     <hr>
 
-    <!-- 列表 -->
-    <div class="row">
-        <div class="col-sm-4 col-md-4">
-            <div class="thumbnail fl">
-                <img src="./img/index.jfif" alt="..." width="220px">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
-                            role="button">Button</a></p>
+
+    <!-- 主页 -->
+    <!-- <zhuye></zhuye> -->
+
+
+
+    <!-- 首页 组件-->
+    <template id="homePage">
+        <div>
+            <!-- 轮播图 -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="./img/01.jpg" alt="..." width="100%">
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./img/02.jpg" alt="..." width="100%">
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./img/03.jpg" alt="..." width="100%">
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./img/04.jpg" alt="..." width="100%">
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./img/05.jpg" alt="..." width="100%">
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
+            <hr>
 
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <div class="thumbnail fl">
-                <img src="./img/index.jfif" alt="..." width="220px">
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
-                            role="button">Button</a></p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <div class="thumbnail fl">
-                <img src="./img/index.jfif" alt="..." width="220px">
-                <div class="caption">
-                    <h3>周杰伦 最新专辑</h3>
-                    <p>只要998</p>
-                    <p><a href="#" class="btn btn-primary fl" role="button">试听</a>
-                        <a href="#" class="btn  btn-success fr" role="button">够买</a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 查看更多 -->
-    <a class="btn btn-primary fr" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
-        aria-controls="collapseExample">
-        查看更多
-    </a>
-
-
-    <div class="collapse" id="collapseExample">
-        <hr>
-        <div class="well ">
+            <!-- 列表 -->
             <div class="row">
-                <div class="col-xs-6 col-md-3 fl">
-                    <a href="#" class="thumbnail">
-                        <img src="./img/01.jpg" alt="...">
-                    </a>
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail fl">
+                        <img src="./img/index.jfif" alt="..." width="220px">
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                    class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail fl">
+                        <img src="./img/index.jfif" alt="..." width="220px">
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                    class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
 
-
-
-                <div class="col-xs-6 col-md-3 fr">
-                    <a href="#" class="thumbnail">
-                        <img src="./img/02.jpg" alt="...">
-                    </a>
                 </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail fl">
+                        <img src="./img/index.jfif" alt="..." width="220px">
+                        <div class="caption">
+                            <h3>周杰伦 最新专辑</h3>
+                            <p>只要998</p>
+                            <p><a href="#" class="btn btn-primary fl" role="button">试听</a>
+                                <a href="#" class="btn  btn-success fr" role="button">够买</a>
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="col-xs-6 col-md-3 fr">
-                    <a href="#" class="thumbnail">
-                        <img src="./img/03.jpg" alt="...">
-                    </a>
                 </div>
-
-                <div class="col-xs-6 col-md-3 fr">
-                    <a href="#" class="thumbnail">
-                        <img src="./img/04.jpg" alt="...">
-                    </a>
-                </div>
-
             </div>
 
+            <!-- 查看更多 -->
+            <a class="btn btn-primary fr" role="button" data-toggle="collapse" href="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                查看更多
+            </a>
+
+
+            <div class="collapse" id="collapseExample">
+                <hr>
+                <div class="well ">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3 fl">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/01.jpg" alt="...">
+                            </a>
+                        </div>
+
+
+
+                        <div class="col-xs-6 col-md-3 fr">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/02.jpg" alt="...">
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3 fr">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/03.jpg" alt="...">
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3 fr">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/04.jpg" alt="...">
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
 
         </div>
-    </div>
+    </template>
+
+    <template id="music">
+        <div>
+
+        </div>
+    </template>
 </div>
 
 
@@ -238,29 +328,42 @@
 
     <!-- vue框架 -->
     <script>
+        // 定义一个名为 button-counter 的新组件
+        Vue.component('zhuye', {
+            template: '#homePage', 
+        })
+        Vue.component('danqu', {
+            template: '#musci', 
+        })
+
+
         const vm = new Vue({
             el: '#app',
             data: {
+             
 
                 // 搜索栏
-                search:'',
+                search: '',
                 //歌曲列表
-                musicList:[]
+                musicList: [],
+                // 封面地址
+                imgUrl:'',
 
 
             },
             methods: {
                 // 搜索歌曲
-                searchMusic(){
+                searchMusic() {
 
                     axios.get("https://autumnfish.cn/search", {
-                        params: {
-                            keywords: this.search
-                        }
-                    })
-                    .then(res => {
-                        console.log(res);
-                    })
+                            params: {
+                                keywords: this.search
+                            }
+                        })
+                        .then(res => {
+                            console.log(res);
+                            this.musicList=res.data.result.songs
+                        })
 
                 }
 
