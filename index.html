@@ -30,10 +30,21 @@
     <h1>黑马云音乐</h1>
 
     <div class="input-group">
-        <input type="text" v-focus class="form-control" placeholder="音乐,从此起步" aria-describedby="basic-addon2">
-        <span class="input-group-addon" id="basic-addon2">&nbsp;&nbsp; &nbsp;&nbsp;搜&nbsp;&nbsp; 索 &nbsp;
+        <input 
+        type="text" 
+        v-focus 
+        v-model="search"
+         @keyup.enter="searchMusic" 
+         class="form-control"
+          placeholder="音乐,从此起步" 
+          aria-describedby="basic-addon2">
+        <span class="input-group-addon " id="basic-addon2">&nbsp;&nbsp; &nbsp;&nbsp;搜&nbsp;&nbsp; 索 &nbsp;
             &nbsp;&nbsp;&nbsp; </span>
+            <!-- <button type="button" class="btn btn-default navbar-btn fl">Sign in</button>     -->
+
     </div>
+
+
     <hr>
 
     <!-- 导航 -->
@@ -223,14 +234,35 @@
     <script src="./libs/js/vue.js"></script>
     <script src="./libs/js/jquery-1.12.4.js"></script>
     <script src="./libs/js/bootstrap.js"></script>
+    <script src="./libs/js/axios.js"></script>
+
     <!-- vue框架 -->
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
 
+                // 搜索栏
+                search:'',
+                //歌曲列表
+                musicList:[]
+
+
             },
             methods: {
+                // 搜索歌曲
+                searchMusic(){
+
+                    axios.get("https://autumnfish.cn/search", {
+                        params: {
+                            keywords: this.search
+                        }
+                    })
+                    .then(res => {
+                        console.log(res);
+                    })
+
+                }
 
             },
             directives: {
